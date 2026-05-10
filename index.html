@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Header -->
         <header>
             <div class="header-left">
-                <h1>Java Network Programming</h1>
+                <h1>Ôn tập trắc nghiệm mạng máy tính</h1>
             </div>
             <div class="header-right">
                 <div class="timer" id="timer">60:00</div>
@@ -23,12 +25,16 @@
         </header>
 
         <!-- Start Screen -->
-        <div id="start-screen" class="start-screen" style="display: flex; justify-content: center; align-items: center; flex: 1;">
-            <div style="text-align: center; padding: 40px; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); max-width: 500px; width: 100%;">
+        <div id="start-screen" class="start-screen"
+            style="display: flex; justify-content: center; align-items: center; flex: 1;">
+            <div
+                style="text-align: center; padding: 40px; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow); max-width: 500px; width: 100%;">
                 <h2 style="margin-bottom: 30px; color: var(--primary-color);">Chọn chế độ làm bài</h2>
                 <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <button id="btn-mode-20" class="btn btn-primary" style="padding: 15px; font-size: 1.1rem;">Thi thử (Ngẫu nhiên 20 câu)</button>
-                    <button id="btn-mode-all" class="btn btn-secondary" style="padding: 15px; font-size: 1.1rem;">Ôn luyện (Tất cả câu hỏi)</button>
+                    <button id="btn-mode-20" class="btn btn-primary" style="padding: 15px; font-size: 1.1rem;">Thi thử
+                        (Ngẫu nhiên 20 câu)</button>
+                    <button id="btn-mode-all" class="btn btn-secondary" style="padding: 15px; font-size: 1.1rem;">Ôn
+                        luyện (Tất cả câu hỏi)</button>
                 </div>
             </div>
         </div>
@@ -36,77 +42,78 @@
         <!-- Quiz Wrapper -->
         <div id="quiz-wrapper" style="display: none; flex-direction: column; flex: 1;">
             <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-bar" id="progress-bar"></div>
-        </div>
-
-        <!-- Main Content -->
-        <main class="main-layout">
-            <!-- Sidebar / Quick Nav -->
-            <aside class="sidebar">
-                <div class="sidebar-header">
-                    <h3>Danh sách câu hỏi</h3>
-                    <div class="stats">
-                        <span id="answered-count">0</span> / <span id="total-count">0</span>
-                    </div>
-                </div>
-                <div class="question-grid" id="question-grid">
-                    <!-- Grid items injected by JS -->
-                </div>
-            </aside>
-
-            <!-- Quiz Container -->
-            <div class="quiz-container" id="quiz-container">
-                <div class="question-header">
-                    <h2 id="question-number">Câu 1</h2>
-                </div>
-                <div class="question-text" id="question-text">
-                    Loading question...
-                </div>
-                <div class="options-container" id="options-container">
-                    <!-- Options injected by JS -->
-                </div>
-                
-                <div class="controls">
-                    <button id="btn-prev" class="btn btn-secondary" disabled>Câu trước</button>
-                    <button id="btn-next" class="btn btn-primary">Câu tiếp theo</button>
-                    <button id="btn-submit" class="btn btn-success" style="display: none;">Nộp bài</button>
-                </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
             </div>
 
-            <!-- Result Container -->
-            <div class="result-container" id="result-container" style="display: none;">
-                <div class="score-card">
-                    <h2>Kết quả làm bài</h2>
-                    <div class="score-circle">
-                        <span id="score-text">0/80</span>
-                    </div>
-                    <div class="score-details">
-                        <div class="detail correct">
-                            <span class="label">Đúng</span>
-                            <span class="value" id="correct-count">0</span>
-                        </div>
-                        <div class="detail incorrect">
-                            <span class="label">Sai</span>
-                            <span class="value" id="incorrect-count">0</span>
-                        </div>
-                        <div class="detail unattempted">
-                            <span class="label">Chưa làm</span>
-                            <span class="value" id="unattempted-count">0</span>
+            <!-- Main Content -->
+            <main class="main-layout">
+                <!-- Sidebar / Quick Nav -->
+                <aside class="sidebar">
+                    <div class="sidebar-header">
+                        <h3>Danh sách câu hỏi</h3>
+                        <div class="stats">
+                            <span id="answered-count">0</span> / <span id="total-count">0</span>
                         </div>
                     </div>
-                    <button id="btn-retry" class="btn btn-primary">Làm lại</button>
+                    <div class="question-grid" id="question-grid">
+                        <!-- Grid items injected by JS -->
+                    </div>
+                </aside>
+
+                <!-- Quiz Container -->
+                <div class="quiz-container" id="quiz-container">
+                    <div class="question-header">
+                        <h2 id="question-number">Câu 1</h2>
+                    </div>
+                    <div class="question-text" id="question-text">
+                        Loading question...
+                    </div>
+                    <div class="options-container" id="options-container">
+                        <!-- Options injected by JS -->
+                    </div>
+
+                    <div class="controls">
+                        <button id="btn-prev" class="btn btn-secondary" disabled>Câu trước</button>
+                        <button id="btn-next" class="btn btn-primary">Câu tiếp theo</button>
+                        <button id="btn-submit" class="btn btn-success" style="display: none;">Nộp bài</button>
+                    </div>
                 </div>
 
-                <div class="review-section" id="review-section">
-                    <!-- Review items injected by JS -->
+                <!-- Result Container -->
+                <div class="result-container" id="result-container" style="display: none;">
+                    <div class="score-card">
+                        <h2>Kết quả làm bài</h2>
+                        <div class="score-circle">
+                            <span id="score-text">0/80</span>
+                        </div>
+                        <div class="score-details">
+                            <div class="detail correct">
+                                <span class="label">Đúng</span>
+                                <span class="value" id="correct-count">0</span>
+                            </div>
+                            <div class="detail incorrect">
+                                <span class="label">Sai</span>
+                                <span class="value" id="incorrect-count">0</span>
+                            </div>
+                            <div class="detail unattempted">
+                                <span class="label">Chưa làm</span>
+                                <span class="value" id="unattempted-count">0</span>
+                            </div>
+                        </div>
+                        <button id="btn-retry" class="btn btn-primary">Làm lại</button>
+                    </div>
+
+                    <div class="review-section" id="review-section">
+                        <!-- Review items injected by JS -->
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
         </div>
     </div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

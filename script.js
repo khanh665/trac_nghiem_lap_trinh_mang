@@ -322,13 +322,9 @@ function showResults() {
     // Update grid for review
     updateGridForReview();
     
-    // Render review section based on mode
-    if (quizMode === 'all') {
-        document.getElementById('review-section').style.display = 'flex';
-        renderReviewSection();
-    } else {
-        document.getElementById('review-section').style.display = 'none';
-    }
+    // Render review section
+    document.getElementById('review-section').style.display = 'flex';
+    renderReviewSection();
 }
 
 function updateGridForReview() {
